@@ -1,5 +1,5 @@
 import type { Message } from "@/types/chat"
-const GQOQ_API_KEY = process.env.GROQ_API_KEY
+const GQOQ_API_KEY = process.env.NEXT_PUBLIC_GROQ_API_KEY
 export async function getChatCompletion(messages: Message[]): Promise<string> {
   const url = "https://api.groq.com/openai/v1/chat/completions"
   const headers = {
@@ -7,7 +7,6 @@ export async function getChatCompletion(messages: Message[]): Promise<string> {
     Authorization: `Bearer ${GQOQ_API_KEY}
 `,
   }
-  console.log(process.env.GROQ_API_KEY);
   
 
   const openAIMessages = [
